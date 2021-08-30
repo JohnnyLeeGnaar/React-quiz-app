@@ -6,7 +6,7 @@ import questions from "../utils/mock";
 import Button from "react-bootstrap/Button";
 
 import Intro from "./Intro";
-import Outro from "./Outro";
+//import Outro from "./Outro";
 
 const INPUT_LIMIT = process.env.REACT_APP_INPUT_LIMIT;
 
@@ -108,12 +108,23 @@ const Quiz = () => {
               </div>
             </div>
           ) : (
-            <Outro
-              name={name}
-              answers={answers}
-              onClickReset={onClickReset}
-              onClickScramble={onClickScramble}
-            ></Outro>
+            <div>
+              <p>{`My pet ${name} is ${answers[0]}, and althought he likes to ${answers[1]}, he really hates ${answers[2]}`}</p>
+              <Button
+                className="intro-button"
+                onClick={onClickReset}
+                variant="primary"
+              >
+                Retry test
+              </Button>{" "}
+              <Button
+                className="intro-button"
+                onClick={onClickScramble}
+                variant="secondary"
+              >
+                Scramble
+              </Button>{" "}
+            </div>
           )}
         </div>
       ) : (
