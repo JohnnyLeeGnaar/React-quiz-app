@@ -24,8 +24,14 @@ const Quiz = () => {
     let answers = localStorage.getItem("answers");
     let name = localStorage.getItem("name");
     let answersParsed = JSON.parse(answers);
+    if(answersParsed){
+        setAnswers(answersParsed);
+    }
+    else{
+        setAnswers([])
+    }
     setCurrentQuestion(questionIndex);
-    setAnswers(answersParsed);
+   
     setStart(startParsed);
     setName(name);
   }, []);
