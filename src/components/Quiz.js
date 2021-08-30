@@ -37,6 +37,7 @@ const Quiz = () => {
   }, [currentQuestion, answers, start, name]);
 
   const onClickHandler = (newAnswer) => {
+      console.log("Nesh tu zeza" + " " + newAnswer)
     if (currentQuestion <= questions.length) {
       const nextQuestion = currentQuestion + 1;
       setCurrentQuestion(nextQuestion);
@@ -107,12 +108,12 @@ const Quiz = () => {
                 ))}
               </div>
               <Button
-                  className="quiz-input-button"
-                  onClick={onClickReset}
-                  variant="light"
-                >
-                  Try again
-                </Button>{" "}
+                className="quiz-input-button"
+                onClick={onClickReset}
+                variant="light"
+              >
+                Try again
+              </Button>{" "}
             </div>
           ) : (
             <Outro
