@@ -106,6 +106,13 @@ const Quiz = () => {
                   </Button>
                 ))}
               </div>
+              <Button
+                  className="quiz-input-button"
+                  onClick={onClickReset}
+                  variant="light"
+                >
+                  Try again
+                </Button>{" "}
             </div>
           ) : (
             <Outro
