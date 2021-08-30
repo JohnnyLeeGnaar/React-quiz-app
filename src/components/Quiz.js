@@ -1,39 +1,12 @@
 import React, { useState, useEffect } from "react";
 
 import { randomize, scramble } from "../utils/api";
-//import questions from "../utils/mock";
+import questions from "../utils/mock";
 
 import Button from "react-bootstrap/Button";
 
 import Intro from "./Intro";
 import Outro from "./Outro";
-
-const questions = [
-    {
-      question: "What size is your dog?",
-      answers: ["tiny", "small", "big", "very large", "huge"],
-    },
-    {
-      question: "What does your dog like?",
-      answers: [
-        "eat a lot",
-        "run a lot",
-        "sleep a lot",
-        "bark a lot",
-        "chase the mailman, a lot",
-      ],
-    },
-    {
-      question: "What does your dog hate?",
-      answers: [
-        "hot weather",
-        "cold weather",
-        "loud noises",
-        "cats",
-        "the mailman",
-      ],
-    },
-  ];
 
 const INPUT_LIMIT = process.env.REACT_APP_INPUT_LIMIT;
 
@@ -132,6 +105,14 @@ const Quiz = () => {
                     {answer}
                   </Button>
                 ))}
+                <p>{`Current index ${currentQuestion} answers: ${answers}`}</p>
+                <Button
+                  className="intro-button"
+                  onClick={onClickReset}
+                  variant="primary"
+                >
+                  Retry test
+                </Button>{" "}
               </div>
             </div>
           ) : (
