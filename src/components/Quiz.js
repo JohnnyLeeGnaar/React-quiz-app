@@ -105,14 +105,6 @@ const Quiz = () => {
                     {answer}
                   </Button>
                 ))}
-                <p>{`Current index ${currentQuestion} answers: ${answers}`}</p>
-                <Button
-                  className="intro-button"
-                  onClick={onClickReset}
-                  variant="primary"
-                >
-                  Retry test
-                </Button>{" "}
               </div>
             </div>
           ) : (
@@ -136,3 +128,13 @@ const Quiz = () => {
 };
 
 export default Quiz;
+
+/*<p>{`Current index ${currentQuestion} answers: ${answers}`}</p>
+                <Button
+                  className="intro-button"
+                  onClick={onClickReset}
+                  variant="primary"
+                >
+                  Retry test
+                </Button>{" "}
+                */
