@@ -24,14 +24,13 @@ const Quiz = () => {
     let answers = localStorage.getItem("answers");
     let name = localStorage.getItem("name");
     let answersParsed = JSON.parse(answers);
-    if(answersParsed){
-        setAnswers(answersParsed);
-    }
-    else{
-        setAnswers([])
+    if (answersParsed) {
+      setAnswers(answersParsed);
+    } else {
+      setAnswers([]);
     }
     setCurrentQuestion(questionIndex);
-   
+
     setStart(startParsed);
     setName(name);
   }, []);
@@ -43,7 +42,6 @@ const Quiz = () => {
   }, [currentQuestion, answers, start, name]);
 
   const onClickHandler = (newAnswer) => {
-      console.log("Nesh tu zeza" + " " + newAnswer)
     if (currentQuestion <= questions.length) {
       const nextQuestion = currentQuestion + 1;
       setCurrentQuestion(nextQuestion);
@@ -112,14 +110,14 @@ const Quiz = () => {
                     {answer}
                   </Button>
                 ))}
+                <Button
+                  className="quiz-input-button"
+                  onClick={onClickReset}
+                  variant="light"
+                >
+                  Try again
+                </Button>{" "}
               </div>
-              <Button
-                className="quiz-input-button"
-                onClick={onClickReset}
-                variant="light"
-              >
-                Try again
-              </Button>{" "}
             </div>
           ) : (
             <Outro
