@@ -23,6 +23,11 @@ const Quiz = () => {
     let questionIndex = Number(question, 10);
     let answers = localStorage.getItem("answers");
     let name = localStorage.getItem("name");
+    if (name) {
+      setName(name);
+    } else {
+      setName("");
+    }
     let answersParsed = JSON.parse(answers);
     if (answersParsed) {
       setAnswers(answersParsed);
@@ -32,7 +37,6 @@ const Quiz = () => {
     setCurrentQuestion(questionIndex);
 
     setStart(startParsed);
-    setName(name);
   }, []);
 
   useEffect(() => {
